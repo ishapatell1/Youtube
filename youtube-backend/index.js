@@ -6,7 +6,8 @@ const authRoutes = require("./src/routes/auth");
 const videoRoutes = require("./src/routes/video");
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
-
+const cors = require("cors");
+app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
